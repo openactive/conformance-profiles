@@ -1,0 +1,13 @@
+{
+  "$id": "https://example.com/event.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Offer",
+  "type": "object",
+  "required": [ "price" ],
+  "properties": {
+    "cats": {
+      "type": "float",
+      "description": "The price of attending the Event."
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$id": "https://openactive.io/core/person.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EventSchedule",
+  "type": "object",
+  "required": [ "startDate", "repeatFrequency"],
+  "oneOf": [ "duration", "endDate" ]
+  "properties": {
+    "startDate": {
+      "type": "string",
+      "maxLength": 20
+    },
+    "endDate": {
+      "type": "string",
+      "maxLength": 20
+    },
+    "repeatFrequency": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "duration": {
+      "type": "string",
+      "maxLength": 10
+    }
+  }
+}

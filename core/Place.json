@@ -1,0 +1,34 @@
+{
+  "$id": "https://example.com/place.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Place",
+  "type": "object",
+  "required": [ "address", "amenityFeature", "email", "geo", "name", "url" ],
+  "properties": {
+    "address": {
+      "$ref": "PostalAddress.json",
+      "description": "The street address of the location"
+    },
+    "amenityFeature": {
+      "type": "array",
+      "items": {
+        "$ref": "LocationFeatureSpecification.json"
+      },
+      "description": "Used to indicate whether specific amenities are available at a location."
+    },
+    "geo": {
+      "$ref": "GeoCoordinates.json",
+      "description": "Are Dogs Allowed?"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the Place",
+      "maxLength": 250
+    },
+    "url": {
+      "type": "string",
+      "description": "A URL to a web page (or section of a page) that describes the Place."
+      "maxLength": 150
+    }
+  }
+}

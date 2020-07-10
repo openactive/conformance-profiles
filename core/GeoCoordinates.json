@@ -1,0 +1,15 @@
+{
+  "$id": "https://example.com/place.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Place",
+  "type": "object",
+  "required": [ "latitude", "longitude" ],
+  "properties": {
+    "latitude": {
+      "type": "float"
+    },
+    "longitude": {
+      "type": "float"
+    }
+  }
+}

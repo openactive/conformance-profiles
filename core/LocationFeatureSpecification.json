@@ -1,0 +1,22 @@
+{
+  "$id": "https://openactive.io/core/locationfeaturespecification.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LocationFeatureSpecification",
+  "type": "object",
+  "required": [ "@type", "name", "value" ],
+  "properties": {
+    "@type": {
+      "type": "string",
+      "description": "In amenityFeatures, this will be the same as the value for 'name'."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the amenity",
+      "maxLength": 150
+    },
+    "value": {
+      "type": "bool",
+      "description": "This must be a boolean, indicating the presence or absence of a feature."
+    }
+  }
+}

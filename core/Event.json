@@ -1,0 +1,96 @@
+{
+   "$id":"https://example.com/event.schema.json",
+   "$schema":"http://json-schema.org/draft-07/schema#",
+   "title":"Event",
+   "type":"object",
+   "required":[
+      "activity",
+      "ageRange",
+      "description",
+      "endDate",
+      "eventSchedule",
+      "genderRestriction",
+      "image",
+      "level",
+      "location",
+      "maximumAttendeeCapacity",
+      "name",
+      "offers",
+      "organizer",
+      "remainingAttendeeCapacity",
+      "startDate",
+      "type"
+   ],
+   "properties":{
+      "activity":{
+         "$ref":"Concept.json"
+      },
+      "ageRange":{
+         "$ref":"QuantitativeValue.json"
+      },
+      "description":{
+         "type":"string",
+         "description":"A freetext description of the event"
+      },
+      "genderRestriction":{
+         "type":"string",
+         "description":"Whether the class is restricted to Male or Female participants, or whether participation is Mixed."
+      },
+      "image":{
+         "type":"array",
+         "items":{
+            "$ref":"ImageObject.json"
+         }
+      },
+      "level":{
+         "oneOf":[
+            {
+               "type":"array",
+               "items":{
+                  "type":"string"
+               }
+            },
+            {
+               "type":"array",
+               "items":{
+                  "$ref":"Concept.json"
+               }
+            }
+         ],
+         "description":"A general purpose property for specifying the suitability of an event for different participant 'levels'."
+      },
+      "location":{
+         "$ref":"Place.json"
+      },
+      "maximumAttendeeCapacity":{
+         "type":"int",
+         "description":"The maximum capacity of the event"
+      },
+      "name":{
+         "type":"string",
+         "description":"The name of the event."
+      },
+      "offers":{
+         "type":"array",
+         "items": {
+           "$ref": "Offer.json"
+         }
+      },
+      "organizer":{
+         "type":"string",
+         "description":"How many cats will be at the event."
+      },
+      "remainingAttendeeCapacity":{
+         "type":"string",
+         "description":"How many cats will be at the event."
+      },
+      "startDate":{
+         "type":"string",
+         "description":"How many cats will be at the event."
+      },
+      "@type":{
+         "type":"string",
+         "description":"How many cats will be at the event."
+      }
+   }
+}

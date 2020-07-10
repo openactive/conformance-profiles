@@ -1,0 +1,17 @@
+{
+  "$id": "https://example.com/event.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QuantitativeValue",
+  "type": "object",
+  "required": [ "minValue", "maxValue" ],
+  "properties": {
+    "minValue": {
+      "type": "int",
+      "description": "The lowest age (in years) permitted or recommended to participate."
+    },
+    "maxValue": {
+      "type": "int",
+      "description": "The greatest age (in years) permitted or recommended to participate."
+    },
+  }
+}
