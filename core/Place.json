@@ -6,18 +6,18 @@
   "required": [ "address", "amenityFeature", "email", "geo", "name", "url" ],
   "properties": {
     "address": {
-      "$ref": "PostalAddress.json",
+      "$ref": "https://openactive.io/core/postaladdress.schema.json",
       "description": "The street address of the location"
     },
     "amenityFeature": {
       "type": "array",
       "items": {
-        "$ref": "LocationFeatureSpecification.json"
+        "$ref": "https://openactive.io/core/locationfeaturespecification.schema.json"
       },
       "description": "Used to indicate whether specific amenities are available at a location."
     },
     "geo": {
-      "$ref": "GeoCoordinates.json",
+      "$ref": "https://openactive.io/core/geocoordinates.schema.json",
       "description": "Are Dogs Allowed?"
     },
     "name": {
@@ -27,7 +27,7 @@
     },
     "url": {
       "type": "string",
-      "description": "A URL to a web page (or section of a page) that describes the Place."
+      "description": "A URL to a web page (or section of a page) that describes the Place.",
       "maxLength": 150
     }
   }

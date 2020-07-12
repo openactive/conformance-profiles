@@ -1,6 +1,6 @@
 {
    "$id":"https://openactive.io/core/event.schema.json",
-   "$schema":"http://json-schema.org/draft-07/schema#",
+   "$schema":"http://json-schema.org/draft-07/schema",
    "title":"Event",
    "type":"object",
    "required":[
@@ -23,10 +23,10 @@
    ],
    "properties":{
       "activity":{
-         "$ref":"Concept.json"
+         "$ref": "https://openactive.io/core/concept.schema.json"
       },
       "ageRange":{
-         "$ref":"QuantitativeValue.json"
+         "$ref": "https://openactive.io/core/quantitativevalue.schema.json"
       },
       "description":{
          "type":"string",
@@ -39,7 +39,7 @@
       "image":{
          "type":"array",
          "items":{
-            "$ref":"ImageObject.json"
+            "$ref":"https://openactive.io/core/imageobject.schema.json"
          }
       },
       "level":{
@@ -53,17 +53,17 @@
             {
                "type":"array",
                "items":{
-                  "$ref":"Concept.json"
+                  "$ref":"https://openactive.io/core/concept.schema.json"
                }
             }
          ],
          "description":"A general purpose property for specifying the suitability of an event for different participant 'levels'."
       },
       "location":{
-         "$ref":"Place.json"
+         "$ref":"https://openactive.io/core/place.schema.json"
       },
       "maximumAttendeeCapacity":{
-         "type":"int",
+         "type":"number",
          "description":"The maximum capacity of the event"
       },
       "name":{
@@ -73,7 +73,7 @@
       "offers":{
          "type":"array",
          "items": {
-           "$ref": "Offer.json"
+           "$ref": "https://openactive.io/core/offer.schema.json"
          }
       },
       "organizer":{
@@ -81,7 +81,7 @@
          "description":"How many cats will be at the event."
       },
       "remainingAttendeeCapacity":{
-         "type":"string",
+         "type":"number",
          "description":"How many cats will be at the event."
       },
       "startDate":{

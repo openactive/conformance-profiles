@@ -6,10 +6,10 @@
   "required": [ "latitude", "longitude" ],
   "properties": {
     "latitude": {
-      "type": "float"
+      "type": "number"
     },
     "longitude": {
-      "type": "float"
+      "type": "number"
     }
   }
 }

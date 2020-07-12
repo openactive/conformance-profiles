@@ -1,0 +1,26 @@
+{
+  "$id": "https://openactive.io/core/postaladdress.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PostalAddress",
+  "type": "object",
+  "required": [ "@type", "postalCode", "streetAddress", "email" ],
+  "properties": {
+    "@type": {
+      "type": "string",
+      "const": "PostalAddress"
+    },
+    "postalCode": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "streetAddress": {
+      "type": "string",
+      "maxLength": 250
+    },
+    "email": {
+      "type": "string",
+      "maxLength": 50
+
+    }
+  }
+}

@@ -6,12 +6,12 @@
   "required": [ "minValue", "maxValue" ],
   "properties": {
     "minValue": {
-      "type": "int",
+      "type": "number",
       "description": "The lowest age (in years) permitted or recommended to participate."
     },
     "maxValue": {
-      "type": "int",
+      "type": "number",
       "description": "The greatest age (in years) permitted or recommended to participate."
-    },
+    }
   }
 }

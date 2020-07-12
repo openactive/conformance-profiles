@@ -15,7 +15,7 @@
       "maxLength": 150
     },
     "value": {
-      "type": "bool",
+      "type": "boolean",
       "description": "This must be a boolean, indicating the presence or absence of a feature."
     }
   }

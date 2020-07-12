@@ -6,7 +6,7 @@
   "required": [ "price" ],
   "properties": {
     "price": {
-      "type": "float",
+      "type": "number",
       "description": "The price of attending the Event."
     }
   }

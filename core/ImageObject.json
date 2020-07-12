@@ -7,7 +7,7 @@
   "properties": {
     "contentUrl": {
       "type": "string",
-      "description": "Actual bytes of the media object, for example the image file or video file."
+      "description": "Actual bytes of the media object, for example the image file or video file.",
       "maxLength": 250
     }
   }
