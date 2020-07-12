@@ -3,8 +3,12 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "QuantitativeValue",
   "type": "object",
-  "required": [ "minValue", "maxValue" ],
+  "required": [ "minValue", "maxValue", "@type" ],
   "properties": {
+    "@type": {
+      "type": "string",
+      "const": "QuantitativeValue"
+    },
     "minValue": {
       "type": "number",
       "description": "The lowest age (in years) permitted or recommended to participate."

@@ -19,7 +19,7 @@
     "organizer",
     "remainingAttendeeCapacity",
     "startDate",
-    "type"
+    "@type"
   ],
   "properties": {
     "activity": {
@@ -85,7 +85,7 @@
     },
     "@type": {
       "type": "string",
-      "description": "How many cats will be at the event."
+      "description": "The type of Event this is (typically a subclass in accordance with the Opportunity 2.0 standard)."
     }
   },
   "oneOf": [{
