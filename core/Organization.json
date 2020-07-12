@@ -1,7 +1,7 @@
 {
-  "$id": "https://openactive.io/core/person.schema.json",
+  "$id": "https://openactive.io/core/organization.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Person",
+  "title": "Organization",
   "type": "object",
   "required": [ "name" ],
   "properties": {
