@@ -1,96 +1,144 @@
 {
-   "$id":"https://openactive.io/core/event.schema.json",
-   "$schema":"http://json-schema.org/draft-07/schema",
-   "title":"Event",
-   "type":"object",
-   "required":[
-      "activity",
-      "ageRange",
-      "description",
-      "endDate",
-      "eventSchedule",
-      "genderRestriction",
-      "image",
-      "level",
-      "location",
-      "maximumAttendeeCapacity",
-      "name",
-      "offers",
-      "organizer",
-      "remainingAttendeeCapacity",
-      "startDate",
-      "type"
-   ],
-   "properties":{
-      "activity":{
-         "$ref": "https://openactive.io/core/concept.schema.json"
-      },
-      "ageRange":{
-         "$ref": "https://openactive.io/core/quantitativevalue.schema.json"
-      },
-      "description":{
-         "type":"string",
-         "description":"A freetext description of the event"
-      },
-      "genderRestriction":{
-         "type":"string",
-         "description":"Whether the class is restricted to Male or Female participants, or whether participation is Mixed."
-      },
-      "image":{
-         "type":"array",
-         "items":{
-            "$ref":"https://openactive.io/core/imageobject.schema.json"
-         }
-      },
-      "level":{
-         "oneOf":[
-            {
-               "type":"array",
-               "items":{
-                  "type":"string"
-               }
+  "$id": "https://openactive.io/core/event.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "Event",
+  "type": "object",
+  "required": [
+    "activity",
+    "ageRange",
+    "description",
+    "endDate",
+    "eventSchedule",
+    "genderRestriction",
+    "image",
+    "level",
+    "location",
+    "maximumAttendeeCapacity",
+    "name",
+    "offers",
+    "organizer",
+    "remainingAttendeeCapacity",
+    "startDate",
+    "type"
+  ],
+  "properties": {
+    "activity": {
+      "$ref": "https://openactive.io/core/concept.schema.json"
+    },
+    "ageRange": {
+      "$ref": "https://openactive.io/core/quantitativevalue.schema.json"
+    },
+    "description": {
+      "type": "string",
+      "description": "A freetext description of the event"
+    },
+    "genderRestriction": {
+      "type": "string",
+      "description": "Whether the class is restricted to Male or Female participants, or whether participation is Mixed."
+    },
+    "image": {
+      "type": "array",
+      "items": {
+        "$ref": "https://openactive.io/core/imageobject.schema.json"
+      }
+    },
+    "level": {
+      "oneOf": [{
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://openactive.io/core/concept.schema.json"
+          }
+        }
+      ],
+      "description": "A general purpose property for specifying the suitability of an event for different participant 'levels'."
+    },
+    "location": {
+      "$ref": "https://openactive.io/core/place.schema.json"
+    },
+    "maximumAttendeeCapacity": {
+      "type": "number",
+      "description": "The maximum capacity of the event"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the event."
+    },
+    "offers": {
+      "type": "array",
+      "items": {
+        "$ref": "https://openactive.io/core/offer.schema.json"
+      }
+    },
+    "organizer": {
+      "type": "string",
+      "description": "How many cats will be at the event."
+    },
+    "remainingAttendeeCapacity": {
+      "type": "number",
+      "description": "How many cats will be at the event."
+    },
+    "startDate": {
+      "type": "string",
+      "description": "How many cats will be at the event."
+    },
+    "@type": {
+      "type": "string",
+      "description": "How many cats will be at the event."
+    }
+  },
+  "oneOf": [{
+      "properties": {
+        "eventSchedule": {
+          "$ref": "https://openactive.io/core/eventschedule.schema.json"
+        }
+      }
+    },
+    {
+      "allOf": [{
+          "properties": {
+            "startDate": {
+              "$ref": "#/definitions/startDate"
+            }
+          }
+        },
+        {
+          "anyOf": [{
+              "properties": {
+                "endDate": {
+                  "$ref": "#/definitions/endDate"
+                }
+              }
             },
             {
-               "type":"array",
-               "items":{
-                  "$ref":"https://openactive.io/core/concept.schema.json"
-               }
+              "properties": {
+                "duration": {
+                  "$ref": "#/definitions/duration"
+                }
+              }
             }
-         ],
-         "description":"A general purpose property for specifying the suitability of an event for different participant 'levels'."
-      },
-      "location":{
-         "$ref":"https://openactive.io/core/place.schema.json"
-      },
-      "maximumAttendeeCapacity":{
-         "type":"number",
-         "description":"The maximum capacity of the event"
-      },
-      "name":{
-         "type":"string",
-         "description":"The name of the event."
-      },
-      "offers":{
-         "type":"array",
-         "items": {
-           "$ref": "https://openactive.io/core/offer.schema.json"
-         }
-      },
-      "organizer":{
-         "type":"string",
-         "description":"How many cats will be at the event."
-      },
-      "remainingAttendeeCapacity":{
-         "type":"number",
-         "description":"How many cats will be at the event."
-      },
-      "startDate":{
-         "type":"string",
-         "description":"How many cats will be at the event."
-      },
-      "@type":{
-         "type":"string",
-         "description":"How many cats will be at the event."
-      }
-   }
+          ]
+        }
+      ]
+    }
+  ],
+  "definitions": {
+    "startDate": {
+      "type": "string",
+      "maxLength": 25
+    },
+    "endDate": {
+      "type": "string",
+      "maxLength": 25
+    },
+    "duration": {
+      "type": "string",
+      "maxLength": 25
+    }
+  }
 }
