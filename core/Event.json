@@ -77,15 +77,11 @@
     },
     "organizer": {
       "type": "string",
-      "description": "How many cats will be at the event."
+      "description": "The Person or Organization responsible for organising the Event."
     },
     "remainingAttendeeCapacity": {
       "type": "number",
-      "description": "How many cats will be at the event."
-    },
-    "startDate": {
-      "type": "string",
-      "description": "How many cats will be at the event."
+      "description": "The number of places that are still available for the event"
     },
     "@type": {
       "type": "string",
