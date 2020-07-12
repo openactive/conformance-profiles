@@ -1,0 +1,34 @@
+{
+  "$id": "https://openactive.io/accessibility/openinghoursspecification.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OpeningHoursSpecification",
+  "type": "object",
+  "required": [ "@type", "opens", "closes", "validFrom", "validThrough", "dayOfWeek"],
+  "properties": {
+    "@type": {
+      "type": "string",
+      "const": "OpeningHoursSpecification"
+    },
+    "opens": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "closes": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "validFrom": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "validThrough": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "dayOfWeek": {
+      "type": "string",
+      "maxLength": 15
+    }
+
+  }
+}

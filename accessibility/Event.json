@@ -1,0 +1,24 @@
+{
+  "$id": "https://openactive.io/accessibility/event.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "Event",
+  "type": "object",
+  "required": [
+    "accessibilitySupport",
+    "transportNote"
+  ],
+  "properties": {
+    "accessibilitySupport": {
+      "type": "array",
+      "items": {
+        "$ref": "https://openactive.io/accessibility/accessibilitysupport.schema.json"
+      }
+    },
+    "transportNote": {
+      "type": "array",
+      "items": {
+        "$ref": "https://openactive.io/accessibility/transportnote.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+	"$id": "https://openactive.io/accessibility/accessibilitysupport.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "AccessibilitySupport",
+	"type": "object",
+	"required": ["carerPolicy", "contactPoint", "description", "hoursAvailable", "isAdvanceNoticeRequired", "name", "participantConditionSupported", "review", "url", "@type"],
+	"properties": {
+		"@type": {
+			"type": "string",
+			"const": "AccessibilitySupport"
+		},
+		"carerPolicy": {
+			"type": "string",
+			"maxLength": 500
+		},
+		"contactPoint": {
+			"$ref": "https://openactive.io/accessibility/contactpoint.schema.json"
+		},
+		"description": {
+			"type": "string",
+			"maxLength": 500
+		},
+		"hoursAvailable": {
+			"type": "array",
+			"items": {
+				"$ref": "https://openactive.io/accessibility/openinghoursspecification.schema.json"
+			}
+		},
+		"isAdvanceNoticeRequired": {
+			"type": "boolean"
+		},
+		"review": {
+			"type": "array",
+			"items": {
+				"$ref": "https://openactive.io/accessibility/review.schema.json"
+			}
+		},
+		"url": {
+			"type": "string",
+			"maxLength": 250
+		}
+	}
+}

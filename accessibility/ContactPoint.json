@@ -1,0 +1,25 @@
+{
+  "$id": "https://openactive.io/accessibility/contactpoint.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ContactPoint",
+  "type": "object",
+  "required": [ "email", "telephone", "contactType", "@type" ],
+  "properties": {
+    "@type": {
+      "type": "string",
+      "const": "ContactPoint"
+    },
+    "email": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "telephone": {
+      "type": "string",
+      "maxLength": 25
+    },
+    "contactType": {
+      "type": "string",
+      "maxLength": 500
+    }
+  }
+}

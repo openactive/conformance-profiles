@@ -1,0 +1,21 @@
+{
+  "$id": "https://openactive.io/accessibility/review.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Review",
+  "type": "object",
+  "required": [ "@type", "reviewBody", "reviewRating" ],
+  "properties": {
+    "@type": {
+      "type": "string",
+      "const": "Review"
+    },
+    "reviewBody": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "reviewRating": {
+      "type": "string",
+      "maxLength": 10
+    }
+  }
+}
