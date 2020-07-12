@@ -7,7 +7,7 @@
   "properties": {
     "@type": {
       "type": "string",
-      "const": "Concept"
+      "const": "Person"
     },
     "name": {
       "type": "string",

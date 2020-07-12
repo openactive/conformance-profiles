@@ -11,36 +11,23 @@
     },
     "startDate": {
       "type": "string",
-      "maxLength": 20
+      "maxLength": 50
     },
     "repeatFrequency": {
       "type": "string",
       "maxLength": 10
-    }
-  },
-  "anyOf": [{
-      "properties": {
-        "endDate": {
-          "$ref": "#/definitions/endDate"
-        }
-      }
     },
-    {
-      "properties": {
-        "duration": {
-          "$ref": "#/definitions/duration"
-        }
-      }
-    }
-  ],
-  "definitions": {
     "endDate": {
       "type": "string",
-      "maxLength": 20
+      "maxLength": 50
     },
     "duration": {
       "type": "string",
       "maxLength": 10
     }
-  }
+  },
+  "anyOf": [
+    {"required": ["endDate"]},
+    {"required": ["duration"]}
+  ]
 }

@@ -7,8 +7,6 @@
     "activity",
     "ageRange",
     "description",
-    "endDate",
-    "eventSchedule",
     "genderRestriction",
     "image",
     "level",
@@ -18,12 +16,14 @@
     "offers",
     "organizer",
     "remainingAttendeeCapacity",
-    "startDate",
     "@type"
   ],
   "properties": {
     "activity": {
-      "$ref": "https://openactive.io/core/concept.schema.json"
+      "type": "array",
+      "items": {
+        "$ref": "https://openactive.io/core/concept.schema.json"
+      }
     },
     "ageRange": {
       "$ref": "https://openactive.io/core/quantitativevalue.schema.json"
@@ -76,7 +76,10 @@
       }
     },
     "organizer": {
-      "type": "string",
+      "oneOf":[
+        {"$ref": "https://openactive.io/core/person.schema.json"},
+        {"$ref": "https://openactive.io/core/organization.schema.json"}
+      ],
       "description": "The Person or Organization responsible for organising the Event."
     },
     "remainingAttendeeCapacity": {
@@ -86,55 +89,26 @@
     "@type": {
       "type": "string",
       "description": "The type of Event this is (typically a subclass in accordance with the Opportunity 2.0 standard)."
-    }
-  },
-  "oneOf": [{
-      "properties": {
-        "eventSchedule": {
-          "$ref": "https://openactive.io/core/eventschedule.schema.json"
-        }
-      }
     },
-    {
-      "allOf": [{
-          "properties": {
-            "startDate": {
-              "$ref": "#/definitions/startDate"
-            }
-          }
-        },
-        {
-          "anyOf": [{
-              "properties": {
-                "endDate": {
-                  "$ref": "#/definitions/endDate"
-                }
-              }
-            },
-            {
-              "properties": {
-                "duration": {
-                  "$ref": "#/definitions/duration"
-                }
-              }
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "definitions": {
     "startDate": {
       "type": "string",
-      "maxLength": 25
+      "maxLength": 50
     },
     "endDate": {
       "type": "string",
-      "maxLength": 25
+      "maxLength": 50
     },
     "duration": {
       "type": "string",
-      "maxLength": 25
+      "maxLength": 10
+    },
+    "eventSchedule": {
+      "$ref": "https://openactive.io/core/eventschedule.schema.json"
     }
-  }
+  },
+  "oneOf": [
+    { "required": ["eventSchedule"]},
+    { "required": ["startDate"],
+      "anyOf": [{"required": ["duration"]}, {"required": ["endDate"]}]}
+  ]
 }
