@@ -1,0 +1,25 @@
+{
+  "$id": "https://openactive.io/socialrx/activity.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Activity",
+  "type": "object",
+  "required": [ "prefLabel", "@type", "id", "inScheme" ],
+  "properties": {
+    "@type": {
+      "type": "string",
+      "const": "Concept"
+    },
+    "prefLabel": {
+      "type": "string",
+      "description": "The name of the Concept (e.g., of an activity or difficulty level)."
+    },
+    "id": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "inScheme": {
+      "type": "string",
+      "maxLength": 100
+    }
+  }
+}

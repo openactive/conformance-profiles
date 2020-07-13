@@ -1,0 +1,33 @@
+{
+  "$id": "https://openactive.io/socialrx/eventschedule.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EventSchedule",
+  "type": "object",
+  "required": ["startDate", "repeatFrequency", "@type", "byDay", "duration", "endDate"],
+  "properties": {
+    "@type": {
+      "type": "string",
+      "const": "EventSchedule"
+    },
+    "startDate": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "repeatFrequency": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "endDate": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "duration": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "byDay": {
+      "type": "string",
+      "maxLength": 10
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "$id": "https://openactive.io/socialrx/event.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "Event",
+  "type": "object",
+  "required": [
+    "accessibilitySupport",
+    "activity",
+    "ageRange",
+    "attendeeInstructions",
+    "description",
+    "genderRestriction",
+    "image",
+    "leader",
+    "interval",
+    "isAccessibleForFree",
+    "level",
+    "location",
+    "maximumAttendeeCapacity",
+    "name",
+    "offers",
+    "organizer",
+    "remainingAttendeeCapacity",
+    "@type",
+    "meetingPoint",
+    "url"
+  ],
+  "properties": {
+    "accessibilitySupport": {
+      "type": "array",
+      "items": {
+        "oneOf":[
+          { "$ref": "https://openactive.io/socialrx/accessibilitysupport.schema.json"},
+          { "type": "string", "maxLength": 500}
+        ]
+      }
+    },
+    "activity": {
+      "type": "array",
+      "items": {
+        "$ref": "https://openactive.io/socialrx/activity.schema.json"
+      }
+    },
+    "ageRange": {
+      "$ref": "https://openactive.io/socialrx/quantitativevalue.schema.json"
+    },
+    "attendeeInstructions": {
+      "type": "string",
+      "maxLength": 250
+    },
+    "description": {
+      "type": "string",
+      "description": "A freetext description of the event"
+    },
+    "genderRestriction": {
+      "type": "string",
+      "description": "Whether the class is restricted to Male or Female participants, or whether participation is Mixed."
+    },
+    "image": {
+      "type": "array",
+      "items": {
+        "$ref": "https://openactive.io/socialrx/imageobject.schema.json"
+      }
+    },
+    "interval":{
+      "type": "string",
+      "maxLength": 10
+
+    },
+    "isAccessibleForFree":{
+      "type": "boolean"
+    },
+    "isFirstSessionAccessibleForFree":{
+      "type": "boolean"
+    },
+    "leader":{
+      "$ref": "https://openactive.io/socialrx/leader.schema.json"
+    },
+    "level": {
+      "oneOf": [{
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "https://openactive.io/socialrx/concept.schema.json"
+          }
+        }
+      ],
+      "description": "A general purpose property for specifying the suitability of an event for different participant 'levels'."
+    },
+    "location": {
+      "$ref": "https://openactive.io/socialrx/place.schema.json"
+    },
+    "maximumAttendeeCapacity": {
+      "type": "number",
+      "description": "The maximum capacity of the event"
+    },
+    "meetingPoint":{
+      "type": "string",
+      "maxLength": 250
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the event."
+    },
+    "offers": {
+      "type": "array",
+      "items": {
+        "$ref": "https://openactive.io/socialrx/offer.schema.json"
+      }
+    },
+    "organizer": {
+      "type": "object",
+      "anyOf":[
+        {"$ref": "https://openactive.io/socialrx/person.schema.json"},
+        {"$ref": "https://openactive.io/socialrx/organization.schema.json"}
+      ],
+      "description": "The Person or Organization responsible for organising the Event."
+    },
+    "remainingAttendeeCapacity": {
+      "type": "number",
+      "description": "The number of places that are still available for the event"
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of Event this is (typically a subclass in accordance with the Opportunity 2.0 standard)."
+    },
+    "url": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "startDate": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "endDate": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "duration": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "eventSchedule": {
+      "$ref": "https://openactive.io/socialrx/eventschedule.schema.json"
+    }
+  },
+  "oneOf": [
+    { "required": ["eventSchedule"]},
+    { "required": ["startDate"],
+      "anyOf": [{"required": ["duration"]}, {"required": ["endDate"]}]}
+  ]
+}
