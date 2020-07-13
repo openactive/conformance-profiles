@@ -3,7 +3,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "OpeningHoursSpecification",
   "type": "object",
-  "required": [ "@type", "opens", "closes", "validFrom", "validThrough", "dayOfWeek"],
+  "required": [ "@type", "opens", "closes"],
   "properties": {
     "@type": {
       "type": "string",
@@ -29,6 +29,5 @@
       "type": "string",
       "maxLength": 15
     }
-
   }
 }
