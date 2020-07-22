@@ -86,7 +86,7 @@
         {
           "type": "array",
           "items": {
-            "$ref": "https://openactive.io/socialrx/concept.schema.json"
+            "$ref": "https://openactive.io/socialrx/level.schema.json"
           }
         }
       ],
